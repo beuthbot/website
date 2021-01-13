@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Gateway, BotRequest} from '@bhtbot/bhtbot';
-import {config as dotenvConig} from 'dotenv';
-
-// use `dotenv` to ready `.env` file even when not running with docker-compose
-dotenvConig();
 
 @Component({
   selector: 'app-chatbot',
@@ -15,7 +11,7 @@ export class ChatbotComponent implements OnInit {
   reply = '';
   message;
 
-  gateway = new Gateway(process.env.GATEWAY_ENDPOINT, 'website');
+  gateway = new Gateway(undefined, 'website');
 
   constructor() { }
 
