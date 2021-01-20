@@ -1,0 +1,42 @@
+.chatbot {
+    margin: 0px;
+    padding: 0px;
+}
+
+.message-container {
+    position: absolute; 
+    bottom: 0;
+    width:100%;
+    background-color: #19a5a5;
+}
+
+.input-group {
+    padding-left: 20px;
+}
+
+.mb-3, .my-3 {
+    margin-top: 0.5rem!important;
+    margin-bottom: 0.5rem!important;
+}
+
+.d-message {
+    float: right;
+}
+
+.d-reply {
+    float: left;
+}
+
+.btn-circle.btn-sm { 
+    width: 30px; 
+    height: 30px; 
+    padding: 6px 0px; 
+    border-radius: 15px; 
+    font-size: 12px; 
+    text-align: center; 
+    margin-top: 0.7rem;
+}
+
+.form-control {
+    width: 80%;
+}

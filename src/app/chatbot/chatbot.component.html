@@ -1,6 +1,9 @@
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+ <div class="chatbot">
+  <div class="displayMessages">
+    <p class="d-reply">{{reply}}</p>
+  </div>
+</div> 
+<div class="message-container row justify-content-around">
+    <input class="form-control input-group mb-3 col-10" placeholder="Nachricht an BHTBot" aria-label="Nachricht an BHTBot" aria-describedby="button-addon2">
+    <button type="button" class="btn btn-secondary btn-circle btn-sm col-1" (click)="chatbotReply()">senden</button>
 </div>
-{{message}}
-{{reply}}

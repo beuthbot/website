@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.dev';
 import { Component, OnInit } from '@angular/core';
 import {Gateway, BotRequest} from '@bhtbot/bhtbot';
 
@@ -9,23 +10,28 @@ import {Gateway, BotRequest} from '@bhtbot/bhtbot';
 export class ChatbotComponent implements OnInit {
 
   reply = '';
-  message;
+  value = '';
 
-  gateway = new Gateway(undefined, 'website');
+  gateway = new Gateway(environment.gateway_endpoint, 'website');
+
+  message: BotRequest;
 
   constructor() { }
 
   ngOnInit() {
+  }
 
+  messageRequest() {
     this.message = new BotRequest({
-      text: 'Hello World',
-      serviceUserId: 1,
-      clientDate: new Date().getTime(),
-      clientLanguage: 'de',
-      firstName: 'test',
+      text: 'Wie ist das Wetter?',        // cleanMessage
+      clientDate: new Date().getTime(),   // createdTimestamp
+      clientLanguage: 'de'
     });
+  }
 
-    this.gateway.query(this.message).then(botResponse => {
+  chatbotReply(messageRequest) {
+    messageRequest = this.messageRequest();
+    this.gateway.query(messageRequest).then(botResponse => {
       console.log('bot responded', botResponse);
       if (botResponse && botResponse.answer && botResponse.answer.content) {
           const responseMessage = botResponse.answer.content;
@@ -33,6 +39,7 @@ export class ChatbotComponent implements OnInit {
       } else {
         this.reply = 'ERROR cant connect to bot gateway';
       }
+      console.log(this.reply);
     });
   }
 
