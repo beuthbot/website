@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
 .about {
-  margin: 150px 150px 150px 150px;
+  margin-top: 150px;
 }
 
 h1{
@@ -25,4 +25,10 @@ h1{
 .btn-primary:hover {
   background-color: transparent;
   color: #32c1cb;
+}
+
+.features-table {
+  width: 80%;
+  margin: auto;
+  margin-top: 200px;
 }

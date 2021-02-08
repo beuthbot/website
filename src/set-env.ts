@@ -1,6 +1,3 @@
-// import { writeFile } from 'fs';
-// import { argv } from 'yargs';
-
 const fs = require('fs');
 const writeFile = fs.writeFile;
 
@@ -19,11 +16,12 @@ const isProd = environment === 'prod';
 
 const targetPath = `./src/environments/environment.${environment}.ts`;
 const envConfigFile = `
-export const environment = {
-  production: ${isProd},
-  gateway_endpoint: '${process.env.GATEWAY_ENDPOINT}'
-};
+  export const environment = {
+    production: ${isProd},
+    gateway_endpoint: '${process.env.GATEWAY_ENDPOINT}'
+  };
 `;
+
 // tslint:disable-next-line:only-arrow-functions
 writeFile(targetPath, envConfigFile, function(err) {
   if (err) {

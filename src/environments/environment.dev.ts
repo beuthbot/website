@@ -1,5 +1,5 @@
 
 export const environment = {
   production: false,
-  gateway_endpoint: 'http://localhost:3000'
+  gateway_endpoint: 'https://beuthbot.ziemers.de'
 };

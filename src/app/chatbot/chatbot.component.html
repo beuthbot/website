@@ -1,9 +1,31 @@
- <div class="chatbot">
-  <div class="displayMessages">
-    <p class="d-reply">{{reply}}</p>
+<app-navbar></app-navbar>
+<div class="ch-component">
+  <div class="chatbot">
+    <div class="container">
+      <div class="justify-content-center col align-self-end box4 sb14">
+        <p style="margin: 0;">
+          Hallo! Ich bin der BHT-Bot.<br>Stelle mir Fragen zum Wetter oder dem Mensa Menü!
+          Oder benötigst du Informationen über das Personal an der BHT?
+        </p>
+      </div>
+      <div class="justify-content-center" *ngFor="let chatbot of chatBots">
+        <div class="col align-self-start box3 sb13">
+          {{chatbot.message}}
+        </div>
+        <br><br><br><br>
+        <div class="col align-self-end box4 sb14 lastMessage" tabindex="1" #lastMessage>
+          {{chatbot.reply}}
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="message-container">
+    <div class="row justify-content-center">
+      <input class="form-control input-group mb-3 col-10" placeholder="Nachricht an BHT-Bot" aria-label="Nachricht an BHT-Bot" aria-describedby="button-addon2"
+        [(ngModel)]="cleanMessage">
+      <button type="button" class="btn btn-info btn-circle btn-send" (click)="chatbotReply()">
+        <img class="send-icon" src="assets/icons/send-icon.svg" alt="paperplane">
+      </button>
+    </div>
   </div>
-</div> 
-<div class="message-container row justify-content-around">
-    <input class="form-control input-group mb-3 col-10" placeholder="Nachricht an BHTBot" aria-label="Nachricht an BHTBot" aria-describedby="button-addon2">
-    <button type="button" class="btn btn-secondary btn-circle btn-sm col-1" (click)="chatbotReply()">senden</button>
 </div>
