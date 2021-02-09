@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
+td {
+  text-align: center;
+}
+
 .about {
   margin-top: 150px;
 }
@@ -31,4 +35,8 @@ h1{
   width: 80%;
   margin: auto;
   margin-top: 200px;
+}
+
+.th-center {
+  text-align: center;
 }

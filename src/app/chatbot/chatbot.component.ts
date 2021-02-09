@@ -51,13 +51,13 @@ export class ChatbotComponent implements OnInit, AfterViewInit {
       if (botResponse && botResponse.answer && botResponse.answer.content) {
           const responseMessage = botResponse.answer.content;
           this.reply = responseMessage;
-      } else {
+      /* } else {
       if (botResponse && botResponse.answer && botResponse.answer.error) {
-          this.reply = botResponse.answer.error;
+          this.reply = botResponse.answer.error; */
       } else {
         this.reply = 'Unknown Error, probably cant connect to bot gateway';
       }
-      }
+      // }
       this.chatBots.push({
         message: this.cleanMessage,
         reply: this.reply
